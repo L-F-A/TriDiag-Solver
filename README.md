@@ -1,9 +1,9 @@
 # TriDiag-Solver
-Thomas algorithm for for solving tridiagonal matrix linear equation Ax=b where A is tridiagonal.
+Thomas algorithm for solving tridiagonal matrix linear equation Ax=b where A is tridiagonal.
 
 see: https://en.wikipedia.org/wiki/Tridiagonal_matrix_algorithm
 
-This algorithm is stable for example for symmetric positive definite matrices.
+This algorithm is stable for example for symmetric positive definite matrices (This is the reason I wanted this approach).
 
 The core function is written in C. The python class acts more like a wrapper. To use it, the C code must be compiled, in the same directory both ... and ... are. The compilation line is just:
 
