@@ -13,12 +13,12 @@ Then evrerything should be ok.
 
 For example:
 
-n=100
-ld=np.random.rand(n-1)
-d=np.random.rand(n)
-ud=np.random.rand(n-1)
-b=np.random.rand(n)
+    n=100
+    ld=np.random.rand(n-1)
+    d=np.random.rand(n)
+    ud=np.random.rand(n-1)
+    b=np.random.rand(n)
 
-TD=TriDiagSol()
+    TD=TriDiagSol()
 
-xhat=TD.solve(ld,d,ud,b)
+    xhat=TD.solve(ld,d,ud,b)
