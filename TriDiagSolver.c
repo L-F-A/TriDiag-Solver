@@ -1,14 +1,14 @@
 #include <stdio.h>
-//		Thomas algorithm for Tridiagonal matrix see: https://en.wikipedia.org/wiki/Tridiagonal_matrix_algorithm
-//					Stable for symmetric positive definite matrices
+/*		Thomas algorithm for Tridiagonal matrix see: https://en.wikipedia.org/wiki/Tridiagonal_matrix_algorithm
+					Stable for symmetric positive definite matrices
 
 
-//					To compile as a shared library use the command:
+					To compile as a shared library use the command:
 
-//				     gcc -shared -fPIC TriDiagSolver.c -o TriDiagSolver.so
+				     gcc -shared -fPIC TriDiagSolver.c -o TriDiagSolver.so
 
-//				    ****Could probably be optimized in the forward loop****
-
+				    ****Could probably be optimized in the forward loop****
+*/
 
 void TriDiagSolver(double *d,double *ld,double *ud,double *b,double *res,int size_d)
 {
