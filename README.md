@@ -22,3 +22,4 @@ For example:
     TD=TriDiagSol()
 
     xhat=TD.solve(ld,d,ud,b)
+    
