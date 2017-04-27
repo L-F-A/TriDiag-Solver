@@ -36,7 +36,7 @@ void TriDiagSolver(double *d,double *ld,double *ud,double *b,double *res,int siz
         num=b[size_d-1]-ld[size_ld-1]*b[size_d-2];
 	b[size_d-1]=num/den;
 
-	//Backward
+	//Backward: solution vector res is populated
 	res[size_d-1]=b[size_d-1];
 	for(j=size_d-2; j>=0 ; j--)
 		res[j]=b[j]-ud[j]*res[j+1];
