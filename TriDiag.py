@@ -12,7 +12,8 @@ class TriDiagSol:
 #       Louis-Francois Arsenault, Columbia Universisty (2013-2017), la2518@columbia.edu     #
 #############################################################################################
 #                                                                                           #
-#       The class definition enables to load the compiled solver at once, hence why a class #
+#       The class constructor enables to load the compiled solver at once, hence why I use  #
+#		     a class here, such as loading everything just once 	            #
 #                                                                                           #
 #       FUNCTION solve:                                                                     #
 #               ld          : Lower diagonal vector					    #
@@ -38,5 +39,7 @@ class TriDiagSol:
 
 		n=len(d)
 		x=np.zeros(n)
+		#the Upper diagonal ud and rhs vector b are modified during the calculation
+		#hence I am passing copies of those such that we keep the original unchanged
 		self._func(d,ld,ud.copy(),b.copy(),x,n)
 		return x
