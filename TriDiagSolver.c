@@ -7,7 +7,7 @@
 
 //				     gcc -shared -fPIC TriDiagSolver.c -o TriDiagSolver.so
 
-//				  ****Could probably be optimized a bit in the forward loop****
+//				    ****Could probably be optimized in the forward loop****
 
 
 void TriDiagSolver(double *d,double *ld,double *ud,double *b,double *res,int size_d)
