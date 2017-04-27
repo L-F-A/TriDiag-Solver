@@ -19,7 +19,7 @@ For example:
     ud=np.random.rand(n-1)
     b=np.random.rand(n)
 
-    #Of course TriDiagSo has been imported already from where it is 
+    #Of course TriDiagSol has been imported already from where it is 
     TD=TriDiagSol()
 
     xhat=TD.solve(ld,d,ud,b)
