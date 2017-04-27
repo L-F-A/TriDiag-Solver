@@ -12,6 +12,9 @@
 
 void TriDiagSolver(double *d,double *ld,double *ud,double *b,double *res,int size_d)
 {
+//The matrix A is passed as only its three non zero vectors, lower, middle and upper diagonal. Passing the 
+//full matrix where most elements are zero would be senseless
+	
 	double den;
 	double num;
 
