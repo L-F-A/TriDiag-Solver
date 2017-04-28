@@ -26,7 +26,8 @@ void TriDiagSolver_Mat_rhs(double *d,double *ld,double *ud,double **b,double **r
 
 
 	//rhs is a matrix
-	double *udd; //ud is modified along the calculation but we need the original for each row of b. Thus we will copy it each time
+	double *udd; //ud is modified along the calculation but we need the original for each row of b. Thus we will copy
+		     //it each time
 	udd=(double *) malloc(size_ud*sizeof(double));
 
 	for(k=0; k<col_b; k++)
