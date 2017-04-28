@@ -12,8 +12,12 @@ class TriDiagSol:
 #       Louis-Francois Arsenault, Columbia Universisty (2013-2017), la2518@columbia.edu     #
 #############################################################################################
 #                                                                                           #
-#       The class definition enables to load the compiled solver at once, hence why a class #
+#       The class constructor enables to load the compiled solver at once, hence why I use  #
+#		     a class here, such as loading everything just once  		    #
 #                                                                                           #
+#	Constructor:									    #
+#		Mat_rhs	    :If False, b in Ax=b is a vector. If True, b is a matrix	    #
+#											    #
 #       FUNCTION solve:                                                                     #
 #               ld          : Lower diagonal vector					    #
 #               d           : Principal diagonal vector					    #
@@ -22,7 +26,7 @@ class TriDiagSol:
 #			      that would be formed with ld, d and ud   			    #
 #											    #
 #	OUTPUT:										    #
-#		x	    : Solution vector of Ax=b					    #
+#		x	    : Solution vector (or matrix) of Ax=b			    #
 #											    #
 ############################################################################################# 
 
@@ -50,11 +54,15 @@ class TriDiagSol:
 		if self.Mat_rhs==False:
 			n=len(d)
 			x=np.zeros(n)
+			#the Upper diagonal ud and rhs vector b are modified during the calculation
+			#hence I am passing copies of those such that we keep the original unchanged
 			self._func(d,ld,ud.copy(),b.copy(),x,n)
 		else:
 			n,c=b.shape
 			x=np.zeros((n,c))
 			xpp=(x.__array_interface__['data'][0] + np.arange(x.shape[0])*x.strides[0]).astype(np.uintp)
+			#the Upper diagonal ud and rhs matrix b are modified during the calculation
+			#hence I am passing copies of those such that we keep the original unchanged
 			b1=b.copy() 
     			bpp=(b1.__array_interface__['data'][0] + np.arange(b1.shape[0])*b1.strides[0]).astype(np.uintp)
 			self._func(d,ld,ud.copy(),bpp,xpp,n,c)
